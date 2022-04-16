@@ -1,2 +1,8 @@
 builds:
-- main: ./cmd/gotmpl/
+  - main: ./cmd/gotmpl/
+  - env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - windows
+      - darwin
