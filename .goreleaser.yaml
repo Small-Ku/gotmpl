@@ -2,20 +2,20 @@ before:
   hooks:
     - go mod download
 builds:
-  - main: ./cmd/gotmpl/
-  - env:
-      - CGO_ENABLED=0
-    goos:
-      - linux
-      - windows
-      - darwin
+- main: ./cmd/gotmpl/main.go
+  env:
+    - CGO_ENABLED=0
+  goos:
+    - linux
+    - windows
+    - darwin
 archives:
-  - replacements:
-      darwin: Darwin
-      linux: Linux
-      windows: Windows
-      386: i386
-      amd64: x86_64
-    format_overrides:
-      - goos: windows
-        format: zip
+- replacements:
+    darwin: Darwin
+    linux: Linux
+    windows: Windows
+    386: i386
+    amd64: x86_64
+  format_overrides:
+    - goos: windows
+      format: zip
