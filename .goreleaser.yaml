@@ -1,6 +1,3 @@
-before:
-  hooks:
-    - go mod download
 builds:
 - main: ./cmd/gotmpl/main.go
   env:
@@ -9,8 +6,11 @@ builds:
     - linux
     - windows
     - darwin
+  targets:
+    - gotmpl
 archives:
-- replacements:
+- name: gotmpl
+  replacements:
     darwin: Darwin
     linux: Linux
     windows: Windows
